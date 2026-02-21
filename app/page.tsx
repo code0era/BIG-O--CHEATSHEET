@@ -337,6 +337,7 @@ const TABS = [
   { id: 'sort', label: '🔀 Sorting' },
   { id: 'search', label: '🔍 Searching' },
   { id: 'ds', label: '🧱 Data Structures' },
+  { id: 'qa', label: '🎯 Interview Q&A' },
 ];
 
 // ─── Main Page ─────────────────────────────────────────────────────────────────
@@ -485,6 +486,18 @@ export default function Home() {
                   </motion.div>
                 )}
               </AnimatePresence>
+            </motion.section>
+          )}
+
+          {/* INTERVIEW Q&A */}
+          {activeTab === 'qa' && (
+            <motion.section key="qa"
+              initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4 }}>
+              <SectionHeader icon="🎯" title="DSA Interview Questions"
+                subtitle="50 top questions · C++ & Java solutions · Click to expand logic, TC/SC & tips · Filter by topic or difficulty" />
+              <ViewControls view={viewMode} setView={setViewMode} fontSize={fontSize} setFontSize={setFontSize} showToggle={false} />
+              <InterviewQA fontSize={fontSize} />
             </motion.section>
           )}
 
