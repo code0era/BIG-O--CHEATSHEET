@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #111118;
+  --bg-card: #16161f;
+  --bg-card-hover: #1e1e2a;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-glow: rgba(99, 102, 241, 0.3);
+  --text-primary: #f0f0ff;
+  --text-secondary: #8888aa;
+  --text-muted: #555570;
+
+  --excellent: #22c55e;
+  --good: #84cc16;
+  --fair: #eab308;
+  --bad: #f97316;
+  --horrible: #ef4444;
+
+  --excellent-bg: rgba(34, 197, 94, 0.15);
+  --good-bg: rgba(132, 204, 22, 0.15);
+  --fair-bg: rgba(234, 179, 8, 0.15);
+  --bad-bg: rgba(249, 115, 22, 0.15);
+  --horrible-bg: rgba(239, 68, 68, 0.15);
+
+  --accent: #6366f1;
+  --accent2: #8b5cf6;
+  --accent3: #06b6d4;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-secondary); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+
+/* Mono font for complexity notation */
+.mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Complexity badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.badge-excellent { background: var(--excellent-bg); color: var(--excellent); border: 1px solid rgba(34, 197, 94, 0.3); }
+.badge-good      { background: var(--good-bg);      color: var(--good);      border: 1px solid rgba(132, 204, 22, 0.3); }
+.badge-fair      { background: var(--fair-bg);       color: var(--fair);      border: 1px solid rgba(234, 179, 8, 0.3); }
+.badge-bad       { background: var(--bad-bg);        color: var(--bad);       border: 1px solid rgba(249, 115, 22, 0.3); }
+.badge-horrible  { background: var(--horrible-bg);   color: var(--horrible);  border: 1px solid rgba(239, 68, 68, 0.3); }

@@ -1,0 +1,517 @@
+/* ─── Page Layout ───────────────────────────────────────────────────────────── */
+.page {
+    min-height: 100vh;
+    background: var(--bg-primary);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ─── Hero ───────────────────────────────────────────────────────────────────── */
+.hero {
+    position: relative;
+    text-align: center;
+    padding: 60px 24px 32px;
+    overflow: hidden;
+}
+
+.heroGlow {
+    position: absolute;
+    inset: -100px;
+    background: radial-gradient(ellipse at 50% 0%, rgba(99, 102, 241, 0.35) 0%, transparent 65%);
+    pointer-events: none;
+}
+
+.heroTag {
+    display: inline-block;
+    margin-bottom: 16px;
+    padding: 4px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--border-glow);
+    background: rgba(99, 102, 241, 0.1);
+    color: #a5b4fc;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.heroTitle {
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    font-weight: 900;
+    color: var(--text-primary);
+    line-height: 1.1;
+    margin-bottom: 12px;
+    letter-spacing: -0.03em;
+}
+
+.heroAccent {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.heroSub {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    max-width: 520px;
+    margin: 0 auto 24px;
+    line-height: 1.6;
+}
+
+/* ─── Legend ─────────────────────────────────────────────────────────────────── */
+.legend {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+/* ─── Tab Nav ────────────────────────────────────────────────────────────────── */
+.tabNav {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    padding: 0 24px 24px;
+    flex-wrap: wrap;
+}
+
+.tab {
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.2s, background 0.2s, border-color 0.2s;
+    font-family: 'Inter', sans-serif;
+}
+
+.tab:hover {
+    color: var(--text-primary);
+    border-color: var(--border-glow);
+    background: var(--bg-card-hover);
+}
+
+.tabActive {
+    color: var(--text-primary);
+    background: rgba(99, 102, 241, 0.15);
+    border-color: var(--border-glow);
+}
+
+.tabUnderline {
+    position: absolute;
+    bottom: -2px;
+    left: 20%;
+    right: 20%;
+    height: 2px;
+    background: linear-gradient(90deg, #6366f1, #8b5cf6);
+    border-radius: 99px;
+}
+
+/* ─── Main ───────────────────────────────────────────────────────────────────── */
+.main {
+    flex: 1;
+    padding: 0 24px 60px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* ─── Section Header ─────────────────────────────────────────────────────────── */
+.sectionHeader {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.sectionIcon {
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.sectionTitle {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+}
+
+.sectionSubtitle {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+/* ─── Card Grid ──────────────────────────────────────────────────────────────── */
+.cardGrid3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+/* ─── Algorithm Card ─────────────────────────────────────────────────────────── */
+.algoCard {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 18px;
+    transition: border-color 0.2s;
+    will-change: transform;
+    position: relative;
+    overflow: hidden;
+}
+
+.algoCard::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.04), transparent 50%);
+    pointer-events: none;
+}
+
+.algoCard:hover {
+    border-color: var(--border-glow);
+}
+
+.cardTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.cardName {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.cardStable {
+    font-size: 0.72rem;
+    font-weight: 600;
+}
+
+.cardReq {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--accent3);
+    background: rgba(6, 182, 212, 0.12);
+    border: 1px solid rgba(6, 182, 212, 0.25);
+    padding: 2px 8px;
+    border-radius: 6px;
+}
+
+.cardGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.cardCell {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.cellLabel {
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+}
+
+.cardNote {
+    margin-top: 12px;
+    padding: 10px 12px;
+    background: rgba(99, 102, 241, 0.08);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 8px;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    overflow: hidden;
+}
+
+.cardHint {
+    margin-top: 10px;
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    text-align: center;
+    letter-spacing: 0.05em;
+}
+
+/* ─── Big-O Graph ────────────────────────────────────────────────────────────── */
+.graphCard {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 28px;
+    margin-bottom: 28px;
+    overflow: hidden;
+    position: relative;
+}
+
+.graphCard::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at top left, rgba(99, 102, 241, 0.08), transparent 60%);
+    pointer-events: none;
+}
+
+.graphTitle {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.graphWrap {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.graphSvg {
+    width: 100%;
+    height: auto;
+}
+
+.graphLegend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.graphLegendItem {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.graphLegendDot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* ─── Complexity Cards (Graph Tab) ──────────────────────────────────────────── */
+.complexityGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 14px;
+}
+
+.complexityCard {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px;
+    text-align: center;
+    cursor: default;
+}
+
+.complexityBadge {
+    display: inline-flex !important;
+    margin-bottom: 10px;
+}
+
+.complexityDesc {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    line-height: 1.45;
+}
+
+/* ─── DS Table ───────────────────────────────────────────────────────────────── */
+.tableWrap {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.tableScroll {
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 900px;
+}
+
+.th {
+    background: rgba(99, 102, 241, 0.12);
+    color: var(--text-primary);
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 14px 12px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+}
+
+.thGroup {
+    background: rgba(99, 102, 241, 0.18);
+    color: #a5b4fc;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    border-left: 1px solid var(--border);
+    letter-spacing: 0.04em;
+}
+
+.thSub {
+    background: rgba(99, 102, 241, 0.08);
+    color: var(--text-secondary);
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 8px 10px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    border-left: 1px solid rgba(255, 255, 255, 0.04);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.tr {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
+}
+
+.tr:last-child {
+    border-bottom: none;
+}
+
+.tdName {
+    padding: 12px 16px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    white-space: nowrap;
+    border-right: 1px solid var(--border);
+}
+
+.td {
+    padding: 10px 10px;
+    text-align: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+/* ─── Footer ─────────────────────────────────────────────────────────────────── */
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerDot {
+    color: var(--text-muted);
+}
+
+/* ─── View Controls Bar ─────────────────────────────────────────────────────── */
+.viewControls {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.controlGroup {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 4px;
+}
+
+.controlLabel {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    padding: 0 6px;
+}
+
+.controlBtn {
+    padding: 6px 14px;
+    border-radius: 7px;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.18s;
+    font-family: 'Inter', sans-serif;
+    white-space: nowrap;
+}
+
+.controlBtn:hover {
+    color: var(--text-primary);
+    background: var(--bg-card-hover);
+    border-color: var(--border-glow);
+}
+
+.controlBtnActive {
+    background: rgba(99, 102, 241, 0.2) !important;
+    border-color: var(--border-glow) !important;
+    color: #a5b4fc !important;
+}
+
+/* ─── AlgoTable (Sorting / Searching table view) ─────────────────────────────── */
+.algoTable {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+    .hero {
+        padding: 40px 16px 24px;
+    }
+
+    .tabNav {
+        gap: 6px;
+    }
+
+    .tab {
+        padding: 8px 14px;
+        font-size: 0.82rem;
+    }
+
+    .main {
+        padding: 0 14px 40px;
+    }
+
+    .cardGrid3 {
+        grid-template-columns: 1fr;
+    }
+}
